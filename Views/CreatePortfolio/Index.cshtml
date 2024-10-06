@@ -1,0 +1,269 @@
+﻿@model MyPortfolio.ViewModels.CreatePortfolioViewModel
+@{
+    ViewBag.Title = "Create Portfolio";
+}
+
+<div class="container mt-4 mb-5">
+
+    <h2 class="text-center mb-3">Create Your Portfolio</h2>
+
+    <h5 class="text-center mb-4">Complete The Steps Below To Create Your Portfolio</h5>
+
+    <table class="table table-bordered table-striped text-center">
+
+        <thead style="font-size:1.1em;">
+            <tr>
+                <th style="width:50%">Steps</th>
+                <th style="width:25%">Status</th>
+                <th style="width:25%">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td class="text-left">Basic Details</td>
+                <td>
+                    @if (Model.BasicInfoId == Guid.Empty)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.BasicInfoId == Guid.Empty)
+                    {
+                        @Html.ActionLink("Add", "SaveBasicInfo", "MyBasicInfo", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "SaveBasicInfo", "MyBasicInfo", new { basicInfoId = Model.BasicInfoId }, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left">Education</td>
+                <td>
+                    @if (Model.EducationCount == 0)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.EducationCount == 0)
+                    {
+                        @Html.ActionLink("Add", "Index", "MyEducation", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "Index", "MyEducation", null, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left">Experience</td>
+                <td>
+                    @if (Model.ExperienceCount == 0)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.ExperienceCount == 0)
+                    {
+                        @Html.ActionLink("Add", "Index", "MyExperience", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "Index", "MyExperience", null, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left">Courses</td>
+                <td>
+                    @if (Model.CoursesCount == 0)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.CoursesCount == 0)
+                    {
+                        @Html.ActionLink("Add", "Index", "MyCourses", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "Index", "MyCourses", null, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left">Skill</td>
+                <td>
+                    @if (Model.SkillCount == 0)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.SkillCount == 0)
+                    {
+                        @Html.ActionLink("Add", "Index", "MySkill", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "Index", "MySkill", null, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left">Language</td>
+                <td>
+                    @if (Model.LanguageCount == 0)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.LanguageCount == 0)
+                    {
+                        @Html.ActionLink("Add", "Index", "MyLanguage", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "Index", "MyLanguage", null, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left">Strength</td>
+                <td>
+                    @if (Model.StrengthCount == 0)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.StrengthCount == 0)
+                    {
+                        @Html.ActionLink("Add", "Index", "MyStrength", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "Index", "MyStrength", null, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left">Hobby</td>
+                <td>
+                    @if (Model.HobbyCount == 0)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.HobbyCount == 0)
+                    {
+                        @Html.ActionLink("Add", "Index", "MyHobby", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "Index", "MyHobby", null, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left">Link</td>
+                <td>
+                    @if (Model.PortfolioLinkCount == 0)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.PortfolioLinkCount == 0)
+                    {
+                        @Html.ActionLink("Add", "Index", "MyPortfolioLink", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "Index", "MyPortfolioLink", null, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-left">Profile Image</td>
+                <td>
+                    @if (Model.ProfileImageId == Guid.Empty)
+                    {
+                        <span class="badge bg-danger" style="font-size:0.75em; padding:0.5em; color:white;">Incompleted</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success" style="font-size: 0.75em; padding: 0.5em; color: white;">Completed</span>
+                    }
+                </td>
+                <td>
+                    @if (Model.ProfileImageId == Guid.Empty)
+                    {
+                        @Html.ActionLink("Add", "SaveProfileImage", "MyProfileImage", null, new { @class = "btn btn-primary" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Edit", "SaveProfileImage", "MyProfileImage", new { profileImageId = Model.ProfileImageId }, new { @class = "btn btn-success" })
+                    }
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
